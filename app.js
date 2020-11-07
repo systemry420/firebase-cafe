@@ -16,13 +16,14 @@ function renderCafe(doc) {
     cafeList.appendChild(li)
 }
 
-
-// get data using snapshot
-db.collection('cafe').get().then((snapshot)=>{
-    snapshot.docs.forEach(doc => {
-        renderCafe(doc);
-    });
-})
+function init() {
+    // get data using snapshot
+    db.collection('cafe').get().then((snapshot)=>{
+        snapshot.docs.forEach(doc => {
+            renderCafe(doc);
+        });
+    })
+}
 
 // listen to form submit
 form.addEventListener('submit', (e)=>{
@@ -36,4 +37,8 @@ form.addEventListener('submit', (e)=>{
 
     form.name.value = ''
     form.city.value = ''
+    cafeList.innerHTML = ''
+    init()
 })
+
+window.addEventListener('load', ()=> init())
