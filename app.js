@@ -26,6 +26,11 @@ function renderCafe(doc) {
         cafeList.innerHTML = ''
         init()
     })
+
+    name.addEventListener('click', (e)=>{
+        const val = e.target.innerText
+        e.target.innerHTML = `<form onsubmit="editData(${e.target.parentElement.getAttribute('data-id')})"><input type="text" value='${val}' /></form>`
+    })
 }
 
 function init() {
@@ -71,4 +76,12 @@ form.addEventListener('submit', (e)=>{
     init()
 })
 
-window.addEventListener('load', ()=> orderByName())
+// update data
+function editData(id, n) {
+    e.preventDefault()
+    db.collection('cafe').doc(id).update({
+        name: n
+    })
+}
+
+window.addEventListener('load', ()=> init())
