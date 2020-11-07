@@ -46,6 +46,15 @@ function loadByCity(city) {
     })
 }
 
+// use orderBy()
+function orderByName() {
+    db.collection('cafe').orderBy('name').get().then((snapshot)=>{
+        snapshot.docs.forEach(doc => {
+            renderCafe(doc);
+        });
+    })
+}
+
 // listen to form submit
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -62,4 +71,4 @@ form.addEventListener('submit', (e)=>{
     init()
 })
 
-window.addEventListener('load', ()=> init())
+window.addEventListener('load', ()=> orderByName())
