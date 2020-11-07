@@ -37,6 +37,15 @@ function init() {
     })
 }
 
+// using where to filter data
+function loadByCity(city) {
+    db.collection('cafe').where('city', '==', city).get().then((snapshot)=>{
+        snapshot.docs.forEach(doc => {
+            renderCafe(doc);
+        });
+    })
+}
+
 // listen to form submit
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
