@@ -1,6 +1,21 @@
 const cafeList = document.querySelector('#cafe-list')
 const form = document.querySelector('#add-cafe-form')
 
+// grab nav elements
+const logoutLinks = document.querySelectorAll('.logged-out')
+const loginLinks = document.querySelectorAll('.logged-in')
+
+const setupUI = (user) =>{
+    if(user){
+        loginLinks.forEach(item => item.style.display = 'block')
+        logoutLinks.forEach(item => item.style.display = 'none')
+    }
+    else {
+        loginLinks.forEach(item => item.style.display = 'none')
+        logoutLinks.forEach(item => item.style.display = 'block')
+    }
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     let modals = document.querySelectorAll('.modal')
     M.Modal.init(modals)
@@ -10,6 +25,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 // create elements and render to DOM
 function renderCafe(data) {
     if(data.length > 0) {
+        cafeList.innerHTML = ''
         data.forEach(doc =>{
             let li = document.createElement('li')
             let name = document.createElement('span')

@@ -5,6 +5,7 @@ auth.onAuthStateChanged(user=>{
     } else {
         renderCafe([])
     }
+    setupUI(user)
 })
 
 
