@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="body.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
@@ -74,7 +75,7 @@
           <input type="password" id="login-password" required />
           <label for="login-password">Your password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <button class="btn yellow darken-2 z-depth-0 width-100">Login</button>
       </form>
     </div>
   </div>
@@ -110,8 +111,8 @@
   <div class="content">
 
       <form id="add-cafe-form">
-          <input type="text" name="name" placeholder="Cafe name">
-          <input type="text" name="city" placeholder="Cafe city">
+          <input type="text" name="name" placeholder="Cafe name" required>
+          <input type="text" name="city" placeholder="Cafe city" required>
           <button>Add</button>
       </form>
 

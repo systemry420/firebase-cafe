@@ -65,9 +65,9 @@ function renderCafe(data) {
 
 function init() {
     // get data using snapshot
-    db.collection('cafe').get().then((snapshot)=>{
+    db.collection('cafe').onSnapshot((snapshot)=>{
             renderCafe(snapshot.docs);
-    })
+    }, err => console.log(err.message))
 }
 
 // using where to filter data
@@ -100,8 +100,8 @@ form.addEventListener('submit', (e)=>{
 
     form.name.value = ''
     form.city.value = ''
-    cafeList.innerHTML = ''
-    init()
+    // cafeList.innerHTML = ''
+    // init()
 })
 
 // update data
