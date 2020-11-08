@@ -1,6 +1,15 @@
-const signForm = document.querySelector('#signup-form')
+// listen for auth changes
+auth.onAuthStateChanged(user=>{
+    if(user){
+        console.log('log in');
+    } else {
+        console.log('log out');
+    }
+})
+
 
 // signup
+const signForm = document.querySelector('#signup-form')
 signForm.addEventListener('submit', (e)=>{
     e.preventDefault()
 
@@ -23,9 +32,7 @@ signForm.addEventListener('submit', (e)=>{
 const logout = document.querySelector('#logout')
 logout.addEventListener('click', e =>{
     e.preventDefault()
-    auth.signOut().then(()=>{
-        console.log('Logged out');
-    })
+    auth.signOut()
 })
 
 
@@ -39,7 +46,7 @@ loginForm.addEventListener('submit', (e)=>{
 
     auth.signInWithEmailAndPassword(email, password)
     .then(cred=>{
-        console.log("login", cred.user);
+        // console.log("login", cred.user);
         const modal = document.querySelector('#modal-login')
         M.Modal.getInstance(modal).close()
         loginForm.reset()
