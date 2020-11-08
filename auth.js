@@ -1,9 +1,9 @@
 // listen for auth changes
 auth.onAuthStateChanged(user=>{
     if(user){
-        console.log('log in');
+        init()
     } else {
-        console.log('log out');
+        renderCafe([])
     }
 })
 
