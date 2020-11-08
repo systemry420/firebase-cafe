@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "firebase": "npm:undefined@^"
+  },
+  "name": "firebase",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/systemry420/firebase-cafe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/systemry420/firebase-cafe/issues"
+  },
+  "homepage": "https://github.com/systemry420/firebase-cafe#readme",
+  "description": ""
+}

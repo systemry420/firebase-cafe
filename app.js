@@ -1,6 +1,12 @@
 const cafeList = document.querySelector('#cafe-list')
 const form = document.querySelector('#add-cafe-form')
 
+document.addEventListener('DOMContentLoaded', ()=>{
+    let modals = document.querySelectorAll('.modal')
+    M.Modal.init(modals)
+
+})
+
 // create elements and render to DOM
 function renderCafe(doc) {
     let li = document.createElement('li')

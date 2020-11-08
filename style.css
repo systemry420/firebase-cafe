@@ -37,7 +37,7 @@ li{
 
 li:nth-child(even){
     padding: 10px;
-    background: #f2f2f2;
+    background: #e2e2e2;
 }
 
 li span{
@@ -54,7 +54,7 @@ li div{
     position: absolute;
     top: 0;
     right: 0px;
-    background: rgba(255,255,255,0.6);
+    background: transparent;
     width: 40px;
     text-align: center;
     padding: 10px 0;
@@ -79,7 +79,7 @@ form input:focus{
     outline: none;
     border-bottom: 3px solid #88236f;
     padding-bottom: 8px;
-    transition: all ease 0.2s;
+    transition: all ease 2s;
 }
 
 form:after{
